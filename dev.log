@@ -9,3 +9,12 @@
 
  GET / 200 in 201ms (next.js: 89ms, application-code: 112ms)
 [browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ POST /api/requests 201 in 201ms (next.js: 191ms, application-code: 11ms)
+ GET /status/mn4sgo5eh7c9vl3jwo9 200 in 653ms (next.js: 624ms, application-code: 30ms)
+ GET /api/requests/mn4sgo5eh7c9vl3jwo9 200 in 578ms (next.js: 572ms, application-code: 5ms)
+ GET / 200 in 101ms (next.js: 5ms, application-code: 96ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET /status/mn4sgo5eh7c9vl3jwo9 200 in 66ms (next.js: 9ms, application-code: 57ms)
+ GET /api/requests/mn4sgo5eh7c9vl3jwo9 200 in 6ms (next.js: 3ms, application-code: 3ms)
+ GET / 200 in 106ms (next.js: 5ms, application-code: 101ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
