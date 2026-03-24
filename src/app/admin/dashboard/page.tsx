@@ -75,7 +75,7 @@ export default function AdminDashboard() {
       const res = await fetch('/api/requests');
       if (res.ok) {
         const data = await res.json();
-        setRequests(data.reverse());
+        setRequests(data);
       }
     } catch (err) {
       console.error(err);

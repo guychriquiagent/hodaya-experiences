@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readDB, writeDB } from '@/lib/db';
+import { prisma } from '@/lib/prisma';
 
 export async function POST(
   request: NextRequest,
@@ -8,21 +8,20 @@ export async function POST(
   try {
     const { id } = await params;
     const body = await request.json();
-    const db = readDB();
-    const index = db.requests.findIndex((r) => r.id === id);
-    if (index === -1) {
+
+    // Verify request exists
+    const req = await prisma.request.findUnique({ where: { id } });
+    if (!req) {
       return NextResponse.json({ error: 'Request not found' }, { status: 404 });
     }
 
-    const comment = {
-      id: Date.now().toString(36) + Math.random().toString(36).substr(2),
-      text: body.text,
-      author: body.author || 'מנהל',
-      createdAt: new Date().toISOString(),
-    };
-
-    db.requests[index].comments.push(comment);
-    writeDB(db);
+    const comment = await prisma.comment.create({
+      data: {
+        text: body.text,
+        author: body.author || 'מנהל',
+        requestId: id,
+      },
+    });
 
     return NextResponse.json(comment, { status: 201 });
   } catch {

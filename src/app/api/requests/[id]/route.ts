@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readDB, writeDB } from '@/lib/db';
+import { prisma } from '@/lib/prisma';
 
 export async function GET(
   _request: NextRequest,
@@ -7,8 +7,10 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const db = readDB();
-    const req = db.requests.find((r) => r.id === id);
+    const req = await prisma.request.findUnique({
+      where: { id },
+      include: { comments: { orderBy: { createdAt: 'asc' } } },
+    });
     if (!req) {
       return NextResponse.json({ error: 'Request not found' }, { status: 404 });
     }
@@ -25,18 +27,18 @@ export async function PATCH(
   try {
     const { id } = await params;
     const body = await request.json();
-    const db = readDB();
-    const index = db.requests.findIndex((r) => r.id === id);
-    if (index === -1) {
-      return NextResponse.json({ error: 'Request not found' }, { status: 404 });
+
+    if (!body.status || !['pending', 'approved', 'rejected'].includes(body.status)) {
+      return NextResponse.json({ error: 'Invalid status' }, { status: 400 });
     }
 
-    if (body.status && ['pending', 'approved', 'rejected'].includes(body.status)) {
-      db.requests[index].status = body.status;
-    }
+    const updated = await prisma.request.update({
+      where: { id },
+      data: { status: body.status },
+      include: { comments: { orderBy: { createdAt: 'asc' } } },
+    });
 
-    writeDB(db);
-    return NextResponse.json(db.requests[index]);
+    return NextResponse.json(updated);
   } catch {
     return NextResponse.json({ error: 'Failed to update request' }, { status: 500 });
   }

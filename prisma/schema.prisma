@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Request {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  name        String
+  email       String
+  date        String
+  experience  String
+  details     String?
+  status      String    @default("pending") // pending, approved, rejected, paid
+  comments    Comment[]
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  text      String
+  author    String   @default("Hodiya") // "Hodiya" or "User"
+  requestId String
+  request   Request  @relation(fields: [requestId], references: [id], onDelete: Cascade)
+}

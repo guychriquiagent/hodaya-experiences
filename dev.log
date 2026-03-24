@@ -18,3 +18,35 @@
  GET /api/requests/mn4sgo5eh7c9vl3jwo9 200 in 6ms (next.js: 3ms, application-code: 3ms)
  GET / 200 in 106ms (next.js: 5ms, application-code: 101ms)
 [browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 69ms (next.js: 7ms, application-code: 61ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 35ms (next.js: 3ms, application-code: 32ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+  Reload env: .env
+✓ Compiled in 28ms
+ GET / 200 in 92ms (next.js: 70ms, application-code: 22ms)
+ GET / 200 in 126ms (next.js: 6ms, application-code: 120ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 82ms (next.js: 5ms, application-code: 78ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 68ms (next.js: 3ms, application-code: 65ms)
+ GET / 200 in 55ms (next.js: 1087µs, application-code: 54ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 82ms (next.js: 3ms, application-code: 79ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 80ms (next.js: 4ms, application-code: 76ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+  Reload env: .env
+✓ Compiled in 15ms
+ GET / 200 in 76ms (next.js: 58ms, application-code: 18ms)
+  Reload env: .env
+ GET / 200 in 90ms (next.js: 69ms, application-code: 21ms)
+[browser] Image with src "/hodiya_v24_gibush.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/hodiya_v24_party.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/hodiya_v24_beads.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/hodiya_v24_painting.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/hodiya_v24_baking.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/hodiya_v24_shopping.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 139ms (next.js: 18ms, application-code: 122ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[?25h

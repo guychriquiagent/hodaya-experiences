@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readDB, writeDB } from '@/lib/db';
+import { prisma } from '@/lib/prisma';
 
 export async function GET() {
   try {
-    const db = readDB();
-    return NextResponse.json(db.requests);
+    const requests = await prisma.request.findMany({
+      include: { comments: { orderBy: { createdAt: 'asc' } } },
+      orderBy: { createdAt: 'desc' },
+    });
+    return NextResponse.json(requests);
   } catch {
     return NextResponse.json({ error: 'Failed to read requests' }, { status: 500 });
   }
@@ -13,24 +16,18 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const db = readDB();
 
-    const id = Date.now().toString(36) + Math.random().toString(36).substr(2);
-
-    const newRequest = {
-      id,
-      name: body.name,
-      email: body.email,
-      date: body.date,
-      experience: body.experience,
-      details: body.details || '',
-      status: 'pending' as const,
-      comments: [],
-      createdAt: new Date().toISOString(),
-    };
-
-    db.requests.push(newRequest);
-    writeDB(db);
+    const newRequest = await prisma.request.create({
+      data: {
+        name: body.name,
+        email: body.email,
+        date: body.date,
+        experience: body.experience,
+        details: body.details || '',
+        status: 'pending',
+      },
+      include: { comments: true },
+    });
 
     return NextResponse.json(newRequest, { status: 201 });
   } catch {
