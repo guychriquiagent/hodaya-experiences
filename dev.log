@@ -1,0 +1,11 @@
+
+> hodiya-experiences@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.128:3000
+✓ Ready in 346ms
+
+ GET / 200 in 201ms (next.js: 89ms, application-code: 112ms)
+[browser] Image with src "/hodiya_v23_fixed_hero.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
